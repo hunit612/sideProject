@@ -4,15 +4,15 @@ class Bootstrap{
 
         $url = $_GET['url'];
         $url = explode("/", $url);
-
-        //어떤 페이지로 이동해야 할지 모르는 경우
+      //어떤 페이지로 이동해야 할지 모르는 경우
         if(empty($url[0])){
             require_once ("controller/students.php");
-            (new Students())->get();
+            (new Students()) -> get();
             return false;
         }
-        $file_name = "controller." . $url[0] . ".php";
-echo $file_name;
+
+        $file_name = "controller/" . $url[0] . ".php";
+
         //파일이 존재하지 않는 경우
         if(!file_exists($file_name)){
             //404 페이지로 이동

@@ -44,5 +44,4 @@
             </li>
         </ul>
     </form>
-</div>/home/hunit/student-portal
-/var/html/
+</div>

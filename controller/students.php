@@ -1,4 +1,5 @@
 <?php
+
 class Students extends Base_Controller{
     public function __construct()
     {
@@ -11,10 +12,11 @@ class Students extends Base_Controller{
             unset($_POST['submit']);
             $this->view->id = $this->model->addStudent($_POST);
         }
-echo 11;
         $this->view->render('students/add');
     }
 
-    public function get($id = null){
+    public function get($id=null){
+        $this->view->student_data = $this->model->getStudents();
+        $this->view->render('students/get');
     }
 }
